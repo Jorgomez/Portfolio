@@ -8,7 +8,8 @@ import {
   Text,
   Image,
   useBreakpointValue,
-  Tooltip
+  Tooltip,
+  useColorMode
 } from '@chakra-ui/react'
 
 export const Footer = () => {
@@ -16,19 +17,19 @@ export const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
-
+  const { colorMode } = useColorMode()
   return (
     <footer>
       <Flex
         direction='column'
         align='center'
         justify='center'
-        bg='gray.800'
-        color='white'
+        bg={colorMode === 'light' ? 'gray.100' : 'gray.800'} // Cambia según el
+        color={colorMode === 'light' ? 'white' : 'gray.800'}
         p={4}
         mt={10}
         borderTop='1px solid'
-        borderColor='gray.700'
+        borderColor={colorMode === 'light' ? 'gray.300' : 'gray.700'} // Cambia según el tema
       >
         <Button
           onClick={scrollToTop}
@@ -82,6 +83,7 @@ export const Footer = () => {
                   src='https://res.cloudinary.com/digcf0lad/image/upload/v1711814985/Portafolio/Vector_4_jff8k8.png'
                   alt='GitHub Icon'
                   boxSize={iconSize}
+                  // bg={colorMode === 'light' ? 'gray.100' : 'gray.800'}
                 />
               </a>
             </Tooltip>
@@ -101,8 +103,11 @@ export const Footer = () => {
         </List>
 
         {/* Copyright y texto */}
-        <Text fontSize='13' color='gray.400'>
-          @2024 - <strong>MYPORTOFOLIO </strong> by JorGomez
+        <Text
+          fontSize='13'
+          color={colorMode === 'light' ? 'gray.400' : 'gray.600'}
+        >
+          @2024 - <strong>MYPORTFOLIO </strong> by JorGomez
         </Text>
       </Flex>
     </footer>
