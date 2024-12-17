@@ -64,7 +64,11 @@ export const Footer = () => {
                 rel='noopener noreferrer'
               >
                 <Image
-                  src='https://res.cloudinary.com/digcf0lad/image/upload/v1711815171/Portafolio/Vector_5_ze3gnd.png'
+                  src={
+                    colorMode === 'light'
+                      ? 'https://res.cloudinary.com/digcf0lad/image/upload/v1711676272/Portafolio/Vector_2_bjmtbe.png'
+                      : 'https://res.cloudinary.com/digcf0lad/image/upload/v1711815171/Portafolio/Vector_5_ze3gnd.png'
+                  }
                   alt='LinkedIn Icon'
                   boxSize={iconSize}
                 />
@@ -80,7 +84,11 @@ export const Footer = () => {
                 rel='noopener noreferrer'
               >
                 <Image
-                  src='https://res.cloudinary.com/digcf0lad/image/upload/v1711814985/Portafolio/Vector_4_jff8k8.png'
+                  src={
+                    colorMode === 'light'
+                      ? 'https://res.cloudinary.com/digcf0lad/image/upload/v1711676268/Portafolio/Vector_1_fzajzj.png'
+                      : 'https://res.cloudinary.com/digcf0lad/image/upload/v1711814985/Portafolio/Vector_4_jff8k8.png'
+                  }
                   alt='GitHub Icon'
                   boxSize={iconSize}
                   // bg={colorMode === 'light' ? 'gray.100' : 'gray.800'}
@@ -93,7 +101,11 @@ export const Footer = () => {
             <Tooltip label='Contact Me' fontSize='sm' placement='top'>
               <a href='mailto:Jorgomez@protonmail.com'>
                 <Image
-                  src='https://res.cloudinary.com/digcf0lad/image/upload/v1711814986/Portafolio/Vector_3_rivw1h.png'
+                  src={
+                    colorMode === 'light'
+                      ? 'https://res.cloudinary.com/digcf0lad/image/upload/v1711676273/Portafolio/Vector_pglbys.png'
+                      : 'https://res.cloudinary.com/digcf0lad/image/upload/v1711814986/Portafolio/Vector_3_rivw1h.png'
+                  }
                   alt='Email Icon'
                   boxSize={iconSize}
                 />
