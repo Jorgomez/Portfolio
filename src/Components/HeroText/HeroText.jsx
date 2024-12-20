@@ -12,8 +12,13 @@ import { EmailIcon } from '@chakra-ui/icons'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import { HeroStack } from '../HeroStack/HeroStack'
 import { HeroImage } from '../HeroImage/HeroImage'
+import { logEvent } from '../../../analytics'
 
 export const HeroText = () => {
+  const handleButtonClick = () => {
+    logEvent('User Interaction', 'Click', 'Contact Button')
+    window.location.href = 'mailto:Jorgomez@protonmail.com'
+  }
   return (
     <Box
       w={{ base: '100%', md: '40%' }}
@@ -46,10 +51,10 @@ export const HeroText = () => {
 
       <Text
         fontSize={{
-          base: '13px', // Tamaño para pantallas pequeñas
+          base: '13px',
           sm: 'md',
           md: 'lg',
-          lg: 'xl' // Tamaño grande
+          lg: 'xl'
         }}
         color='gray.600'
         _dark={{ color: 'gray.300' }}
@@ -86,9 +91,7 @@ export const HeroText = () => {
           colorScheme='teal'
           variant='solid'
           size='md'
-          onClick={() =>
-            (window.location.href = 'mailto:Jorgomez@protonmail.com')
-          }
+          onClick={handleButtonClick}
         >
           Contact Me
         </Button>
@@ -101,6 +104,9 @@ export const HeroText = () => {
             colorScheme='gray'
             size='md'
             variant='outline'
+            onClick={() =>
+              logEvent('User Interaction', 'Click', 'linkedin Button')
+            }
           />
         </Link>
 
@@ -112,6 +118,9 @@ export const HeroText = () => {
             colorScheme='gray'
             size='md'
             variant='outline'
+            onClick={() =>
+              logEvent('User Interaction', 'Click', 'GitHub Button')
+            }
           />
         </Link>
       </HStack>
