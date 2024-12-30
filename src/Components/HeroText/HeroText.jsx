@@ -6,7 +6,14 @@ import {
   Button,
   IconButton,
   HStack,
-  Link
+  Link,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverHeader,
+  PopoverBody
 } from '@chakra-ui/react'
 import { EmailIcon } from '@chakra-ui/icons'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
@@ -18,6 +25,18 @@ export const HeroText = () => {
   const handleButtonClick = () => {
     logEvent('User Interaction', 'Click', 'Contact Button')
     window.location.href = 'mailto:Jorgomez@protonmail.com'
+  }
+
+  const handleCVDownload = (language) => {
+    logEvent('User Interaction', 'Click', `CV Download - ${language}`)
+    const cvUrl =
+      language === 'es'
+        ? 'public/CV_JORGOMEZ_SPANISH.pdf'
+        : 'public/Jorge_Gomez _CV_pdf.pdf'
+    const link = document.createElement('a')
+    link.href = cvUrl
+    link.download = `CV_${language}.pdf`
+    link.click()
   }
   return (
     <Box
@@ -90,8 +109,14 @@ export const HeroText = () => {
           rightIcon={<EmailIcon />}
           colorScheme='teal'
           variant='solid'
-          size='md'
+          // size='md'
           onClick={handleButtonClick}
+          fontSize={{
+            base: '10px !important',
+            sm: '13px !important',
+            md: '15px !important'
+          }}
+          size={{ base: 'sm', md: 'md' }}
         >
           Contact Me
         </Button>
@@ -102,7 +127,7 @@ export const HeroText = () => {
             icon={<FaLinkedin />}
             aria-label='LinkedIn profile'
             colorScheme='gray'
-            size='md'
+            size={{ base: 'sm', md: 'md' }}
             variant='outline'
             onClick={() =>
               logEvent('User Interaction', 'Click', 'linkedin Button')
@@ -116,13 +141,61 @@ export const HeroText = () => {
             icon={<FaGithub />}
             aria-label='GitHub profile'
             colorScheme='gray'
-            size='md'
+            size={{ base: 'sm', md: 'md' }}
             variant='outline'
             onClick={() =>
               logEvent('User Interaction', 'Click', 'GitHub Button')
             }
           />
         </Link>
+        <Popover>
+          <PopoverTrigger>
+            <Button
+              colorScheme='teal'
+              variant='outline'
+              size={{ base: 'sm', md: 'md' }}
+              fontSize={{
+                base: '10px !important',
+                sm: '13px !important',
+                md: '15px !important'
+              }}
+            >
+              Download CV
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent width={{ base: '100px', md: '140px' }}>
+            <PopoverArrow />
+            <PopoverCloseButton />
+
+            <PopoverBody>
+              <Button
+                colorScheme='teal'
+                size={{ base: 'xs', md: 'sm' }}
+                fontSize={{
+                  base: '10px !important',
+                  md: '13px !important'
+                }}
+                w='100%'
+                onClick={() => handleCVDownload('en')}
+                mb={2}
+              >
+                English
+              </Button>
+              <Button
+                colorScheme='teal'
+                size={{ base: 'xs', md: 'sm' }}
+                fontSize={{
+                  base: '10px !important',
+                  md: '13px !important'
+                }}
+                w='100%'
+                onClick={() => handleCVDownload('es')}
+              >
+                Spanish
+              </Button>
+            </PopoverBody>
+          </PopoverContent>
+        </Popover>
       </HStack>
 
       <HeroStack iconSize={5} />

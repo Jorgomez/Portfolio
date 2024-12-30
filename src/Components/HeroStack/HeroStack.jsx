@@ -1,4 +1,4 @@
-import { Box, Flex, Icon, Text } from '@chakra-ui/react'
+import { Box, Center, Flex, Icon, Text } from '@chakra-ui/react'
 import React from 'react'
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub } from 'react-icons/fa'
 import { SiExpress, SiJavascript, SiMongodb } from 'react-icons/si'
@@ -9,7 +9,12 @@ export const HeroStack = ({ iconSize = 10 }) => {
       {/* <Text fontSize='m' fontWeight='bold' mb={4}>
         Tech Stack
       </Text> */}
-      <Flex justify='flex-start' gap={6} mt={4} wrap='wrap'>
+      <Flex
+        gap={6}
+        mt={4}
+        wrap='wrap'
+        justify={{ base: 'center', md: 'flex-start' }}
+      >
         <Flex direction='column' align='center'>
           <Icon as={FaReact} boxSize={iconSize} color='teal.500' />
           <Text fontSize='sm' mt={2}>
