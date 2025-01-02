@@ -31,8 +31,8 @@ export const HeroText = () => {
     logEvent('User Interaction', 'Click', `CV Download - ${language}`)
     const cvUrl =
       language === 'es'
-        ? 'public/CV_JORGOMEZ_SPANISH.pdf'
-        : 'public/Jorge_Gomez _CV_pdf.pdf'
+        ? '/CV_JORGOMEZ_SPANISH.pdf'
+        : '/Jorge_Gomez _CV_pdf.pdf'
     const link = document.createElement('a')
     link.href = cvUrl
     link.download = `CV_${language}.pdf`
