@@ -32,7 +32,7 @@ export const HeroText = () => {
     const cvUrl =
       language === 'es'
         ? '/CV_JORGOMEZ_SPANISH.pdf'
-        : '/Jorge_Gomez _CV_pdf.pdf'
+        : '/JORGOMEZ_CV_En_RESUME.pdf'
     const link = document.createElement('a')
     link.href = cvUrl
     link.download = `CV_${language}.pdf`
