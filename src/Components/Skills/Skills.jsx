@@ -106,7 +106,7 @@ export const Skills = () => {
         </Box>
 
         <Box mt={10}>
-          <Heading
+          {/* <Heading
             as='h2'
             size='lg'
             mb={6}
@@ -117,11 +117,11 @@ export const Skills = () => {
             fontSize={'20px'}
           >
             Ongoing Learning Journey
-          </Heading>
+          </Heading> */}
 
           {/* Tecnologías */}
           <Box mt={4}>
-            <Heading
+            {/* <Heading
               as='h4'
               size='md'
               mb={6}
@@ -132,7 +132,7 @@ export const Skills = () => {
               fontSize={'15px'}
             >
               Tech:
-            </Heading>
+            </Heading> */}
 
             <Flex mt={3} gap={6} wrap='wrap'>
               {/* React */}
@@ -142,19 +142,19 @@ export const Skills = () => {
                   React
                 </Text>
               </Flex> */}
-              <Flex direction='column' align='center' ml={3}>
+              {/* <Flex direction='column' align='center' ml={3}>
                 <Icon as={SiTypescript} boxSize={8} color='blue.500' />
                 <Text fontSize='sm' mt={2}>
                   TypeScript
                 </Text>
-              </Flex>
+              </Flex> */}
               {/* Next.js */}
-              <Flex direction='column' align='center'>
+              {/* <Flex direction='column' align='center'>
                 <Icon as={SiNextdotjs} boxSize={8} color='black' />
                 <Text fontSize='sm' mt={3}>
                   Next.js
                 </Text>
-              </Flex>
+              </Flex> */}
             </Flex>
 
             {/* <Flex direction='column' align='center'>
@@ -166,7 +166,7 @@ export const Skills = () => {
           </Box>
 
           <Box mt={8}>
-            <Heading
+            {/* <Heading
               as='h4'
               size='md'
               mb={6}
@@ -182,7 +182,7 @@ export const Skills = () => {
               I'm currently taking a course in Artificial Intelligence,
               exploring how to use various AI tools to increase efficiency and
               innovation in solution development.
-            </Text>
+            </Text> */}
           </Box>
         </Box>
       </Box>

@@ -5,7 +5,8 @@ import {
   Link,
   IconButton,
   useDisclosure,
-  VStack
+  VStack,
+  useToast
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher'
@@ -14,6 +15,19 @@ import Logo from '../Logo/Logo'
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const toast = useToast()
+
+  const handleProjectsClick = (e) => {
+    e.preventDefault()
+    toast({
+      title: "Section in update",
+      description: "The projects are being updated. They will be available soon!",
+      status: "info",
+      duration: 3000,
+      isClosable: true,
+      position: "top"
+    })
+  }
 
   return (
     <Box
@@ -58,14 +72,21 @@ const Header = () => {
         >
           Home
         </Link>
-        <Link
-          as={NavLink}
-          to='/Project'
+        <Box
+          as='button'
+          onClick={handleProjectsClick}
           _hover={{ textDecoration: 'underline' }}
-          _activeLink={{ fontWeight: 'bold', color: 'teal.500' }}
+          color='gray.400'
+          _dark={{ color: 'gray.500' }}
+          cursor='not-allowed'
+          fontSize='md'
+          fontWeight='normal'
+          bg='transparent'
+          border='none'
+          p={0}
         >
           Projects
-        </Link>
+        </Box>
         <Link
           as={NavLink}
           to='/About'
@@ -105,15 +126,25 @@ const Header = () => {
           >
             Home
           </Link>
-          <Link
-            as={NavLink}
-            to='/Project'
+          <Box
+            as='button'
+            onClick={(e) => {
+              e.preventDefault()
+              onClose()
+              handleProjectsClick(e)
+            }}
             _hover={{ textDecoration: 'underline' }}
-            _activeLink={{ fontWeight: 'bold', color: 'teal.500' }}
-            onClick={onClose}
+            color='gray.400'
+            _dark={{ color: 'gray.500' }}
+            cursor='not-allowed'
+            fontSize='md'
+            fontWeight='normal'
+            bg='transparent'
+            border='none'
+            p={0}
           >
             Projects
-          </Link>
+          </Box>
           <Link
             as={NavLink}
             to='/About'

@@ -51,7 +51,7 @@ export const HeroText = () => {
         mb={{ base: 0, md: 3 }}
         // border={'1px solid'}
       >
-        Hi, I'm,
+        Hi, I'm 
       </Text>
 
       <Heading
@@ -91,8 +91,7 @@ export const HeroText = () => {
         >
           Full Stack Developer
         </Box>{' '}
-        based in Spain, passionate about building accessible and user-friendly
-        websites.
+        based in Madrid, Spain, passionate about building modern  mobile and web  applications.
       </Text>
 
       <HeroImage display={{ base: 'block', md: 'none' }} />
