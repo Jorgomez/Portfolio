@@ -1,0 +1,189 @@
+@import '../../../../../../styles/global.scss';
+
+
+.pdf-modal-backdrop {
+    
+  position: fixed;
+  top: 0;
+  left: -10;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 0;
+  animation: backdropFadeIn 0.3s ease-out;
+}
+
+
+.pdf-modal {
+
+  margin-top: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+
+  );
+  
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+
+  width: 95vw;
+  max-width: 1000px;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  animation: modalSlideIn 0.3s ease-out;
+  z-index: 10000;
+  
+  @include mobile {
+    width: 98vw;
+    height: 95vh;
+    border-radius: 16px;
+    max-width: none;
+    max-height: none;
+  }
+}
+
+
+.pdf-modal__header {
+  display: flex;
+  justify-content: flex-end;
+  
+  
+} 
+.pdf-modal__header-close {  
+  padding: 0.5rem;
+  cursor: pointer;
+  
+  margin-right: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 20px;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.5);
+    color: rgba(239, 68, 68, 1);
+    transform: scale(1.05);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+  
+  @include mobile {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    margin-right: 0.5rem;
+  }
+} 
+
+
+
+
+.pdf-modal__content {
+  flex: 1;
+  padding: 16px;
+  overflow: hidden;
+  z-index: 10000;
+  @include mobile {
+    padding: 12px;
+  }
+}
+
+.pdf-modal__iframe {
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    inset 0 2px 8px rgba(0, 0, 0, 0.1),
+    0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+// Animaciones
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+// Tema claro
+:root.light {
+  .pdf-modal {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.7) 50%,
+      rgba(255, 255, 255, 0.95) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 
+      0 25px 50px rgba(0, 0, 0, 0.15),
+      0 15px 30px rgba(0, 0, 0, 0.1),
+      inset 0 2px 4px rgba(255, 255, 255, 0.9),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .pdf-modal__header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.02) 0%,
+      rgba(0, 0, 0, 0.01) 100%
+    );
+  }
+  
+  .pdf-modal__title {
+    color: rgba(0, 0, 0, 0.9);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  }
+  
+  .pdf-modal__button {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.8);
+    
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      color: rgba(0, 0, 0, 1);
+      box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+  }
+  
+  .pdf-modal__footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.01) 0%,
+      rgba(0, 0, 0, 0.005) 100%
+    );
+  }
+  
+  .pdf-modal__info {
+    color: rgba(0, 0, 0, 0.6);
+  }
+} 

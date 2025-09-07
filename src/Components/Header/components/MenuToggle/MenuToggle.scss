@@ -1,0 +1,43 @@
+@import '../../../../styles/global';
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  
+  @include mobile {
+    display: flex;
+  }
+  
+  span {
+    width: 24px;
+    height: 3px;
+    background: var(--color-text);
+    border-radius: 2px;
+    @include transition(all, 0.3s);
+    transform-origin: 1px;
+  }
+  
+  &.open {
+    span {
+      &:first-child {
+        transform: rotate(45deg);
+      }
+      
+      &:nth-child(2) {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+} 

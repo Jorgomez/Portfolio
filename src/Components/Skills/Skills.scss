@@ -1,0 +1,107 @@
+@import '../../styles/global';
+
+.skills-container {
+  flex: 1;
+}
+
+.skills-content {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.skills-title {
+  font-family: $font-family-heading;
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-align: left;
+  margin: 0;
+}
+
+.education-section {
+  margin-top: 2.5rem;
+}
+
+.education-title {
+  font-family: $font-family-heading;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-align: left;
+  margin: 0 0 1.5rem 0;
+}
+
+.certification-item,
+.education-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1rem;
+}
+
+.certification-logo,
+.education-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+
+.certification-info,
+.education-info {
+  flex: 1;
+}
+
+.certification-name,
+.education-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-text);
+  margin: 0 0 0.25rem 0;
+}
+
+.certification-institution,
+.education-institution {
+  font-size: 0.875rem;
+  color: #718096;
+  margin: 0;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+// Theme adjustments
+:root.light {
+  .skills-title,
+  .education-title {
+    color: var(--color-accent);
+  }
+  
+  .certification-name,
+  .education-name {
+    color: var(--color-text);
+  }
+  
+  .certification-institution,
+  .education-institution {
+    color: #4A5568;
+  }
+  
+  .certification-item,
+  .education-item {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  }
+}
+
+:root:not(.light) {
+  .certification-institution,
+  .education-institution {
+    color: #A0AEC0;
+  }
+} 

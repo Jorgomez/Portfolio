@@ -1,39 +1,43 @@
 import React from 'react'
-import { Box, Heading, Text, Image, Flex } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import { Description } from '../../Components/Desciption/Description'
 import { Skills } from '../../Components/Skills/Skills'
+import './AboutMe.scss'
 
 const About = () => {
   return (
-    <Box as='main' w='90%' mx='auto' mt={4} py={6}>
-      <Box
-        textAlign='center'
-        mb={8}
-        w={{ base: '90%', md: '60%', lg: '40%' }}
-        m={'auto'}
-      >
-        <Heading
-          as='h3'
-          size='lg'
-          color='teal.500'
-          fontWeight={'200'}
-          fontSize={{ base: '20px', md: '25px', lg: '28px' }}
+    <main className="about-page">
+      <div className="about-container">
+        <motion.div 
+          className="about-header"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.8, 
+            ease: "easeOut",
+            delay: 0.2
+          }}
         >
-          <span style={{ fontWeight: '500' }}>Full-Stack Developer</span> with a{' '}
-          <span style={{ fontWeight: '500' }}>Management</span> Background
-        </Heading>
-      </Box>{' '}
-      <Flex
-        direction={{ base: 'column', md: 'row' }}
-        gap={6}
-        justify='space-between'
-        mt={'60px'}
-      >
-        <Description flex={{ base: '1', md: '3' }} />
-
-        <Skills flex={{ base: '1', md: '' }} />
-      </Flex>
-    </Box>
+          <h3 className="about-main-title">
+            <span className="title-bold">Full-Stack Developer</span> with a{' '}
+            <span className="title-bold">Management</span> Background
+          </h3>
+        </motion.div>
+        
+        <motion.div 
+          className="about-content"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ 
+            duration: 0.6,
+            delay: 0.5
+          }}
+        >
+          <Description />
+          <Skills />
+        </motion.div>
+      </div>
+    </main>
   )
 }
 

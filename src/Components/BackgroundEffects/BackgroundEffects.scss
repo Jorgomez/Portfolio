@@ -1,0 +1,23 @@
+@import '../../styles/global';
+
+.background-effects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -10;
+  overflow: hidden;
+}
+
+// Reducir efectos en dispositivos con preferencias de movimiento reducido
+@media (prefers-reduced-motion: reduce) {
+  .background-effects {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+} 

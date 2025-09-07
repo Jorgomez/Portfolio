@@ -1,12 +1,11 @@
+import { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
-import { ThemeSwitcher } from './Components/ThemeSwitcher/ThemeSwitcher'
+import { initAnalytics, logPageView } from '../analytics'
 import Header from './Components/Header/Header'
+import BackgroundEffects from './Components/BackgroundEffects/BackgroundEffects'
 import { Home } from './Pages/Home/Home'
 import Projects from './Pages/Projects/Projects'
-import About from './Pages/AboutMe/AboutMe'
-import Footer from './Components/Footer/Footer'
-import { useEffect } from 'react'
-import { initAnalytics, logPageView } from '../analytics'
+import AboutMe from './Pages/AboutMe/AboutMe'
 
 function App() {
   const location = useLocation()
@@ -20,17 +19,29 @@ function App() {
   }, [location])
 
   return (
-    <>
+    <div className="min-h-screen text-text font-body">
+    
+      <BackgroundEffects 
+        aurora={true}
+        shapes={true}
+        textures={true}
+        intensity="medium"
+        shapesCount={1}
+        shapesSize="large"  
+        auroraPosition="center"
+        texturePattern="grid"
+        textureOpacity={1}
+        animateTextures={true}
+      />
+      
       <Header />
+      
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/Project' element={<Projects />} />
-        <Route path='/About' element={<About />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutMe />} />
       </Routes>
-      <Footer />
-      {/* <ToastContainer position='top-right' autoClose={3000} hideProgressBar /> */}
-    </>
+    </div>
   )
 }
 
-export default App
+export default App 

@@ -17,9 +17,9 @@ import {
 } from '@chakra-ui/react'
 import { EmailIcon } from '@chakra-ui/icons'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
-import { HeroStack } from '../HeroStack/HeroStack'
+import { HeroStack } from '../../../../../Components/HeroStack/HeroStack'
 import { HeroImage } from '../HeroImage/HeroImage'
-import { logEvent } from '../../../analytics'
+import { logEvent } from '../../../../../../analytics'
 
 export const HeroText = () => {
   const handleButtonClick = () => {
@@ -94,7 +94,7 @@ export const HeroText = () => {
         based in Madrid, Spain, passionate about building modern  mobile and web  applications.
       </Text>
 
-      <HeroImage display={{ base: 'block', md: 'none' }} />
+      
 
       <HStack
         spacing={4}
@@ -175,6 +175,7 @@ export const HeroText = () => {
                 w='100%'
                 onClick={() => handleCVDownload('en')}
                 mb={2}
+                
               >
                 English
               </Button>

@@ -1,0 +1,70 @@
+@import '../../styles/global';
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: transparent;
+  
+  // border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.header-container {
+  
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  
+  @include mobile {
+    padding: 1rem;
+  }
+}
+
+
+@include desktop {
+  .header-left {
+    
+    flex: 0 0 auto;
+    display: flex;
+  }
+  
+  .header-center {
+    
+    
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem; 
+  }
+  
+  .header-right {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+
+@include mobile {
+  .header-left {
+    
+    flex: 0 0 auto;
+  }
+  
+  .header-center {
+    
+    display: none;
+  }
+  
+  .header-right {
+    
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+

@@ -1,0 +1,329 @@
+@import '../../../../styles/global';
+
+.hero-image {
+  margin-right: 7rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-lg;
+  perspective: 1200px;
+  @include mobile {
+    padding: 0;
+    margin-right: 0;
+    margin-top: 1.5rem;
+    
+  }
+}
+
+// .hero-image__wrapper {
+  
+//   width: 100%;
+//   max-width: 300px;
+//   height: auto;
+//   position: relative;
+//   z-index: 9;
+  
+  
+//   transform: perspective(800px) rotateX(5deg) rotateY(-8deg) rotateZ(2deg);
+//   transform-style: preserve-3d;
+//   transition: transform $transition-slow;
+  
+  
+//   padding: 28px;
+//   border-radius: 28px;
+  
+  
+//   background: linear-gradient(145deg, 
+//     #2a2d3a 0%,    // Gris azulado oscuro
+//     #363b4d 25%,   // Gris más claro
+//     #2d3748 50%,   // Gris azulado medio
+//     #4a5568 75%,   // Gris más claro
+//     #2a2d3a 100%   // De vuelta al oscuro
+//   );
+  
+  
+//   box-shadow: 
+    
+//     0 25px 50px rgba(0, 0, 0, 0.5),
+//     0 15px 30px rgba(0, 0, 0, 0.4),
+//     0 8px 16px rgba(0, 0, 0, 0.3),
+    
+//     inset 0 4px 8px rgba(255, 255, 255, 0.12),
+//     inset 0 -6px 12px rgba(0, 0, 0, 0.5),
+//     inset 4px 0 8px rgba(0, 0, 0, 0.4),
+//     inset -4px 0 8px rgba(255, 255, 255, 0.08),
+   
+//     inset 0 0 20px rgba(0, 0, 0, 0.3);
+  
+ 
+//   border: 1px solid rgba(255, 255, 255, 0.1);
+  
+//   @include mobile {
+//     max-width: 280px;
+    
+//     border-radius: 24px;
+//     transform: perspective(600px) rotateX(3deg) rotateY(-5deg) rotateZ(1deg);
+//     box-shadow: 
+//       0 20px 40px rgba(0, 0, 0, 0.5),
+//       0 12px 24px rgba(0, 0, 0, 0.4),
+//       0 6px 12px rgba(0, 0, 0, 0.3),
+//       inset 0 3px 6px rgba(255, 255, 255, 0.12),
+//       inset 0 -4px 8px rgba(0, 0, 0, 0.5),
+//       inset 3px 0 6px rgba(0, 0, 0, 0.4),
+//       inset -3px 0 6px rgba(255, 255, 255, 0.08),
+//       inset 0 0 15px rgba(0, 0, 0, 0.3);
+//   }
+  
+//   &:hover {
+//     transform: perspective(800px) rotateX(2deg) rotateY(-4deg) rotateZ(1deg) scale(1.02);
+//     box-shadow: 
+     
+//       0 25px 50px rgba(0, 0, 0, 0.5),
+//       0 15px 30px rgba(0, 0, 0, 0.4),
+     
+//       inset 0 2px 4px rgba(255, 255, 255, 0.1),
+//       inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+//       inset 2px 0 4px rgba(0, 0, 0, 0.2),
+//       inset -2px 0 4px rgba(255, 255, 255, 0.05);
+//   }
+// }
+
+.hero-image__img-element {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 500px !important;
+  object-fit: cover;
+  border-radius: 12px; 
+  display: block;
+  
+  
+  box-shadow: 
+    inset 0 0 30px rgba(0, 0, 0, 0.5),
+    inset 0 4px 12px rgba(0, 0, 0, 0.4), 
+    inset 0 -2px 8px rgba(0, 0, 0, 0.3),
+    inset 4px 0 8px rgba(0, 0, 0, 0.3), 
+    inset -4px 0 8px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.1); 
+  
+  
+  transition: none;
+  
+  @include mobile {
+    
+    box-shadow: 
+      inset 0 0 25px rgba(0, 0, 0, 0.5),
+      inset 0 3px 9px rgba(0, 0, 0, 0.4),
+      inset 0 -2px 6px rgba(0, 0, 0, 0.3),
+      inset 3px 0 6px rgba(0, 0, 0, 0.3),
+      inset -3px 0 6px rgba(0, 0, 0, 0.3),
+      0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+.ornamental-frame {
+display: flex;
+align-items: center;
+justify-content: center;
+  
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  
+  
+  &:hover {
+    .hero-image__wrapper {
+      transform: perspective(800px) rotateX(2deg) rotateY(-4deg) rotateZ(1deg) scale(1.02);
+      box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+        inset 2px 0 4px rgba(0, 0, 0, 0.2),
+        inset -2px 0 4px rgba(255, 255, 255, 0.05);
+    }
+    
+    .image-actions {
+      transform: translateX(-54%) 
+                 translateZ(25px)
+                 perspective(800px) 
+                 rotateX(-3deg) 
+                 rotateY(-6deg) 
+                 rotateZ(2deg) 
+                 scale(1.02);
+      
+      background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
+      
+      @include mobile {
+        
+        transform: translateX(-50%) 
+                   translateZ(20px)
+                   perspective(600px) 
+                   rotateX(-2deg) 
+                   rotateY(-4deg) 
+                   rotateZ(1deg) 
+                   scale(1.02);
+      }
+    }
+  }
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-image__wrapper {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  
+  
+  transform: perspective(800px) rotateX(5deg) rotateY(-8deg) rotateZ(2deg);
+  transform-style: preserve-3d;
+  transition: transform $transition-slow;
+  
+  
+  padding: 28px;
+  border-radius: 28px;
+  
+  
+  background: linear-gradient(145deg, 
+    #2a2d3a 0%,    // Gris azulado oscuro
+    #363b4d 25%,   // Gris más claro
+    #2d3748 50%,   // Gris azulado medio
+    #4a5568 75%,   // Gris más claro
+    #2a2d3a 100%   // De vuelta al oscuro
+  );
+  
+  
+  box-shadow: 
+    
+    0 25px 50px rgba(0, 0, 0, 0.5),
+    0 15px 30px rgba(0, 0, 0, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.3),
+    
+    inset 0 4px 8px rgba(255, 255, 255, 0.12),
+    inset 0 -6px 12px rgba(0, 0, 0, 0.5),
+    inset 4px 0 8px rgba(0, 0, 0, 0.4),
+    inset -4px 0 8px rgba(255, 255, 255, 0.08),
+   
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
+  
+ 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  @include mobile {
+    max-width: 320px;
+    padding: 22px; 
+    border-radius: 24px;
+    transform: perspective(600px) rotateX(3deg) rotateY(-5deg) rotateZ(1deg);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.5),
+      0 12px 24px rgba(0, 0, 0, 0.4),
+      0 6px 12px rgba(0, 0, 0, 0.3),
+      inset 0 3px 6px rgba(255, 255, 255, 0.12),
+      inset 0 -4px 8px rgba(0, 0, 0, 0.5),
+      inset 3px 0 6px rgba(0, 0, 0, 0.4),
+      inset -3px 0 6px rgba(255, 255, 255, 0.08),
+      inset 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  &:hover {
+    transform: perspective(800px) rotateX(2deg) rotateY(-4deg) rotateZ(1deg) scale(1.02);
+    box-shadow: 
+     
+      0 25px 50px rgba(0, 0, 0, 0.5),
+      0 15px 30px rgba(0, 0, 0, 0.4),
+     
+      inset 0 2px 4px rgba(255, 255, 255, 0.1),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+      inset 2px 0 4px rgba(0, 0, 0, 0.2),
+      inset -2px 0 4px rgba(255, 255, 255, 0.05);
+  }
+}
+
+.hero-image__img-element {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 500px !important;
+  object-fit: cover;
+  border-radius: 12px; 
+  display: block;
+  
+  
+  box-shadow: 
+    inset 0 0 30px rgba(0, 0, 0, 0.5),
+    inset 0 4px 12px rgba(0, 0, 0, 0.4), 
+    inset 0 -2px 8px rgba(0, 0, 0, 0.3),
+    inset 4px 0 8px rgba(0, 0, 0, 0.3), 
+    inset -4px 0 8px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.1); 
+  
+  
+  transition: none;
+  
+  @include mobile {
+    max-height: 380px !important;
+    border-radius: 10px;
+    box-shadow: 
+      inset 0 0 25px rgba(0, 0, 0, 0.5),
+      inset 0 3px 9px rgba(0, 0, 0, 0.4),
+      inset 0 -2px 6px rgba(0, 0, 0, 0.3),
+      inset 3px 0 6px rgba(0, 0, 0, 0.3),
+      inset -3px 0 6px rgba(0, 0, 0, 0.3),
+      0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+:root.light {
+  .hero-image__wrapper {
+    
+    background: linear-gradient(145deg, 
+      #e2e8f0 0%,    // Gris claro
+      #f7fafc 25%,   // Casi blanco
+      #edf2f7 50%,   // Gris muy claro
+      #d1d5db 75%,   // Gris medio
+      #e2e8f0 100%   // De vuelta al gris claro
+    );
+    
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.15),
+      0 10px 20px rgba(0, 0, 0, 0.1),
+      inset 0 2px 4px rgba(255, 255, 255, 0.8),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.1),
+      inset 2px 0 4px rgba(0, 0, 0, 0.05),
+      inset -2px 0 4px rgba(255, 255, 255, 0.3);
+    
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-image__img-element {
+    filter: brightness(1.05) contrast(1.05);
+    box-shadow: 
+      inset 0 0 20px rgba(0, 0, 0, 0.15),
+      0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+:root:not(.light) {
+  .hero-image__img-element {
+    filter: brightness(0.95) contrast(1.1);
+  }
+} 

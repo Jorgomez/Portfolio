@@ -1,36 +1,24 @@
-import { Box, Flex } from '@chakra-ui/react'
 import React from 'react'
-import { HeroImage } from '../../Components/HeroImage/HeroImage'
-import HeroText from '../../Components/HeroText/HeroText'
+import { HeroText } from './components/HeroText/HeroText'
+import { HeroStack } from './components/HeroStack/HeroStack'
+import { HeroImage } from './components/HeroImage/HeroImage'
+import './Home.scss'
+import { HeroStackMovile } from './components/HeroStack/HeroStackMovile/HeroStackMovile'
 
 export const Home = () => {
   return (
-    <Box
-      as='main'
-      w='90%'
-      minHeight='88vh'
-      px={6}
-      py={{ base: 0, md: 6 }}
-      display='flex'
-      alignItems='center'
-      // border='1px solid'
-      margin={'auto'}
-      mt={0}
-    >
-      <Flex
-        direction={{ base: 'column', md: 'row' }}
-        align='center'
-        justify='center'
-        wrap='wrap'
-        gap={8}
-        w='100%'
-        h='100%'
-        // border='1px solid'
-      >
-        <HeroText />
-
-        <HeroImage display={{ base: 'none', md: 'block' }} />
-      </Flex>
-    </Box>
+    <main className="home">
+      <div className="home-container">
+        <div className="left-container">
+          <HeroText/>
+          <HeroStack/>
+        </div>
+        
+        <div className="right-container">
+          <HeroImage className="home-hero-image" />
+          <HeroStackMovile/>
+        </div>
+      </div>
+    </main>
   )
 }

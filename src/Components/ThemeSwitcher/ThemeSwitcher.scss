@@ -1,0 +1,30 @@
+@import '../../styles/global';
+
+.theme-switcher {
+  
+  @include transition();
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+  
+  
+  [data-slot="wrapper"] {
+    @include transition();
+    
+    &:hover {
+      box-shadow: $shadow-lg;
+    }
+  }
+  
+  @include mobile {
+    transform: scale(0.9);
+    
+    &:hover {
+      transform: scale(0.95);
+    }
+  }
+
+
+
+} 

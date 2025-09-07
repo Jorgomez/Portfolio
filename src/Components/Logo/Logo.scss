@@ -1,0 +1,15 @@
+@import '../../styles/global';
+
+.logo-container {
+
+  
+
+  
+  @include mobile {
+    transform: scale(0.95);
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+} 
