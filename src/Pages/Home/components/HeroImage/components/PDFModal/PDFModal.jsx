@@ -20,7 +20,7 @@ export const PDFModal = ({ isOpen, onClose, pdfUrl, title, language }) => {
     }
   }
 
-  // Función para cerrar el modal
+  
   const handleClose = () => {
     onClose()
   }

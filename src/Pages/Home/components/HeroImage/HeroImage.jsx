@@ -17,13 +17,13 @@ export const HeroImage = ({ className }) => {
       }}
     >
       <div className="ornamental-frame">
-        {/* Esquinas ornamentales */}
+        
         <div className="ornamental-corner ornamental-corner--top-left"></div>
         <div className="ornamental-corner ornamental-corner--top-right"></div>
         <div className="ornamental-corner ornamental-corner--bottom-left"></div>
         <div className="ornamental-corner ornamental-corner--bottom-right"></div>
         
-        {/* Bordes ornamentales */}
+        
         <div className="ornamental-border ornamental-border--top"></div>
         <div className="ornamental-border ornamental-border--right"></div>
         <div className="ornamental-border ornamental-border--bottom"></div>
@@ -40,7 +40,7 @@ export const HeroImage = ({ className }) => {
           }}
         />
         
-        {/* Botones de acciones en el pie de la imagen */}
+        
         <ImageActions />
       </div>
     </motion.div>

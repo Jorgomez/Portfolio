@@ -60,7 +60,7 @@ export const HeroStackMovile = () => {
               <div className="icon-container-movile">
                 <tech.icon className="tech-icon" />
               </div>
-              <span className="name-movile">{tech.name}</span>
+              <span className="tech-name">{tech.name}</span>
             </motion.div>
           ))}
         </motion.div>

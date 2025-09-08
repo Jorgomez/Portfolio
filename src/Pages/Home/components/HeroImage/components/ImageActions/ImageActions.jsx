@@ -27,7 +27,7 @@ export const ImageActions = () => {
     window.open('https://www.linkedin.com/in/jorgomezm/', '_blank')
   }
 
-  // Función para mostrar CV en modal
+  
   const handleCVView = (language) => {
     const cvUrl = language === 'es' ? '/CV_JORGOMEZ_SP.L.pdf' : '/CV_JORGOMEZ_EN..pdf'
     const title = language === 'es' ? 'CV Jorge Gómez - Español' : 'CV Jorge Gómez - English'

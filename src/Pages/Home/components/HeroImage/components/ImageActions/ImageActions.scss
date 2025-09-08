@@ -4,7 +4,7 @@
   position: absolute;
   bottom: 30px;
   left: 51%;
-  width: calc(100% - 80px);
+  width: 80%;
   transform: translateX(-54%)   
              translateZ(10px) 
              perspective(800px) 
@@ -31,7 +31,7 @@
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   
-  // Sombras 3D dramáticas
+  
   box-shadow: 
     0 25px 60px rgba(0, 0, 0, 0.4),
     0 15px 35px rgba(0, 0, 0, 0.3),
@@ -62,7 +62,7 @@
   @include mobile {
     bottom: 25px;
     left: 49%;
-    width: calc(100% - 140px);
+    width: 80%;
     padding: 4px 8px;
     border-radius: 18px;
     transform: translateX(-50%) 
@@ -85,7 +85,7 @@
       inset 0 0.5px 0 rgba(255, 255, 255, 0.15);
   }
   
-  // HOVER REMOVIDO - Se controla desde .ornamental-frame
+  
 }
 
 .image-actions__button {
@@ -103,7 +103,7 @@
   transform-style: preserve-3d;
   transition: all 0.3s ease;
   
-  // TODOS los botones iguales por defecto - SIN bordes ni backgrounds
+ 
   background: transparent;
   border: 1px solid transparent;
   box-shadow: none;
@@ -199,15 +199,10 @@
   }
 }
 
-// Eliminar todas las clases de selección - todos los botones iguales
-.image-actions__button--primary,
-.image-actions__button--secondary,
-.image-actions__button--tertiary,
-.image-actions__button--selected {
-  // Sin estilos especiales por defecto
-}
 
-// Estilos para tema claro
+
+
+
 :root.light {
   .image-actions {
     background: linear-gradient(
@@ -298,7 +293,7 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
     inset 0 -1px 0 rgba(0, 0, 0, 0.5);
   padding: 6px;
-  z-index: 1000;
+  z-index: 9999;
   animation: dropdownSlideIn 0.2s ease-out;
   
   @include mobile {

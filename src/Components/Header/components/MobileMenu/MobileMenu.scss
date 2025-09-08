@@ -1,11 +1,14 @@
 @import '../../../../styles/global';
 
 .mobile-menu {
-  background: color-mix(in srgb, var(--color-background) 98%, transparent);
+  background: color-mix(in srgb, var(--color-background) 50%, transparent);
   backdrop-filter: blur(10px);
   border-top: 1px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
   padding: 2rem;
   overflow: hidden;
+  
+  position: absolute;
+  width: 100%;
   
   @include desktop {
     display: none;
