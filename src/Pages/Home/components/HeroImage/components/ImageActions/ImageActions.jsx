@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaLinkedin, FaWhatsapp } from 'react-icons/fa'
-import { HiMail, HiChevronDown } from 'react-icons/hi'
+import { HiMail, HiChevronDown, HiDownload } from 'react-icons/hi'
 import PDFModal from '../PDFModal/PDFModal'
 import './ImageActions.scss'
 
@@ -8,6 +8,23 @@ export const ImageActions = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isPDFModalOpen, setIsPDFModalOpen] = useState(false)
   const [selectedCV, setSelectedCV] = useState({ url: '', language: '', title: '' })
+  const [isMobile, setIsMobile] = useState(false)
+  
+  // Detectar si es dispositivo móvil
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    // Comprobar al cargar
+    checkIfMobile()
+    
+    // Comprobar al cambiar el tamaño de la ventana
+    window.addEventListener('resize', checkIfMobile)
+    
+    // Limpiar el event listener
+    return () => window.removeEventListener('resize', checkIfMobile)
+  }, [])
   
   // Función para WhatsApp
   const handleWhatsApp = () => {
@@ -37,7 +54,20 @@ export const ImageActions = () => {
       language: language,
       title: title
     })
-    setIsPDFModalOpen(true)
+    
+    if (isMobile) {
+      // En móvil: descargar directamente
+      const link = document.createElement('a')
+      link.href = cvUrl
+      link.download = language === 'es' ? 'CV_Jorge_Gomez_Español.pdf' : 'CV_Jorge_Gomez_English.pdf'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    } else {
+      // En desktop: mostrar modal
+      setIsPDFModalOpen(true)
+    }
+    
     setIsDropdownOpen(false) // Cerrar dropdown
   }
 
@@ -97,13 +127,25 @@ export const ImageActions = () => {
                 className="image-actions__dropdown-item"
                 onClick={() => handleCVView('en')}
               >
-                English
+                {isMobile ? (
+                  <>
+                    English <HiDownload className="image-actions__button-download-icon" />
+                  </>
+                ) : (
+                  'English'
+                )}
               </button>
               <button 
                 className="image-actions__dropdown-item"
                 onClick={() => handleCVView('es')}
               >
-                Spanish
+                {isMobile ? (
+                  <>
+                    Spanish <HiDownload className="image-actions__button-download-icon" />
+                  </>
+                ) : (
+                  'Spanish'
+                )}
               </button>
             </div>
           )}
