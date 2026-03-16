@@ -1,0 +1,134 @@
+@import '../../../../styles/global.scss';
+
+.project-showcase {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: $spacing-3xl 0;
+  
+  @include mobile {
+    min-height: auto;
+    padding: $spacing-2xl 0;
+  }
+}
+
+.project-showcase__container {
+  
+  display: flex;
+  gap: $spacing-3xl;
+  align-items: center;
+  width: 100%;
+  height: 70vh;
+  
+  @include mobile {
+ 
+    gap: $spacing-xl;
+  }
+}
+
+
+.project-showcase--normal {
+  .project-showcase__container {
+    @include mobile {
+      grid-template-areas: 
+        "content"
+        "image";
+    }
+  }
+}
+
+
+.project-showcase--reverse {
+  .project-showcase__container {
+  display: flex;
+  flex-direction: row-reverse;
+    @include mobile {
+      grid-template-areas: 
+        "content"
+        "image";
+    }
+  }
+}
+
+.project-showcase__image {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-showcase__content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-image-container {
+  width: 100%;
+  position: relative;
+  
+}
+
+.project-mockup {
+  width: 100%;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: $border-radius-xl;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  
+  @include mobile {
+    height: 300px;
+  }
+}
+
+.device-container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  @include mobile {
+    height: 300px;
+  }
+}
+
+.device-content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.device-screenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.project-content {
+  padding: $spacing-lg;
+  
+  @include mobile {
+    padding: $spacing-md;
+    text-align: center;
+  }
+}
+
+.project-info {
+  max-width: 500px;
+}
+
+.project-title {
+  font-size: $font-size-4xl;
+  font-family: $font-family-heading;
+  color: var(--color-text);
+  margin-bottom: $spacing-lg;
+  
+  @include mobile {
+    font-size: $font-size-3xl;
+  }
+}

@@ -1,0 +1,20 @@
+@import '../../styles/global.scss';
+
+.projects {
+  min-height: 100vh;
+  padding: $spacing-2xl 0;
+  
+  @include mobile {
+    padding: $spacing-xl 0;
+  }
+}
+
+.projects-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+  
+  @include mobile {
+    padding: 0 $spacing-md;
+  }
+}

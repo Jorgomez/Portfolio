@@ -46,7 +46,7 @@ export const ImageActions = () => {
 
   
   const handleCVView = (language) => {
-    const cvUrl = language === 'es' ? '/CV_JORGOMEZ_SP.L.pdf' : '/CV_JORGOMEZ_EN..pdf'
+    const cvUrl = language === 'es' ? '/CV_JORGOMEZ_SP.pdf' : '/CV_JORGOMEZ_EN.pdf'
     const title = language === 'es' ? 'CV Jorge Gómez - Español' : 'CV Jorge Gómez - English'
     
     setSelectedCV({
